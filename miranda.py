@@ -12,10 +12,7 @@ from urllib.request import Request, urlopen
 #jupyter timeit  & lprun
 
 def scrap():
-
-
    # page = requests.get(urlsuiv, headers=headers)
-
     page = requests.get(urlsuiv)
     soup = BeautifulSoup(page.text, 'html.parser')
 
@@ -45,18 +42,18 @@ def scrap():
             urllib.request.urlretrieve(image, "./"+FNAME+"/"+nom.upper() + ".jpg")
 
 if __name__ == '__main__':
-     # ua = shadow_useragent.ShadowUserAgent()
-     # ua.force_update()
-     # my_user_agent = ua.percent(0.01)
-     # headers = {
-     #     'User-Agent': '{}'.format(my_user_agent),
-     #     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-     #     'Accept-Language': 'en-US,en;q=0.5',
-     #     'Connection': 'keep-alive',
-     #     'Upgrade-Insecure-Requests': '1',
-     #     'Pragma': 'no-cache',
-     #     'Cache-Control': 'no-cache',
-     # }
+      ua = shadow_useragent.ShadowUserAgent()
+      ua.force_update()
+      my_user_agent = ua.percent(0.01)
+      headers = {
+          'User-Agent': '{}'.format(my_user_agent),
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.5',
+          'Connection': 'keep-alive',
+          'Upgrade-Insecure-Requests': '1',
+          'Pragma': 'no-cache',
+          'Cache-Control': 'no-cache',
+      }
      FNAME = "CHANEL SPRING 2020 COUTURE"
      urlsuiv = 'https://www.vogue.com/fashion-shows/spring-2020-couture/chanel/slideshow/collection/print'
 
